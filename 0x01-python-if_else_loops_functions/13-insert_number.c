@@ -2,11 +2,12 @@
 
 /**
  * insert_node - Inserts a number
- * @head: the head of the linked list
- * @number: the number to inserted
- * Return: If fails - NULL.
+ * @head: pointer to the head of the linked list
+ * @number: inserted number
+ * Return: If the fun fails - NULL.
  * Otherwise - a pointer to the new node.
  */
+
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *node = *head, *new;
@@ -24,6 +25,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	while (node && node->next && node->next->n < number)
 		node = node->next;
+
 	new->next = node->next;
 	node->next = new;
 	return (new);
